@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akniyet Adil | No-Code Developer</title>
+    <style>
+        /* MINIMALIST CSS RESET & STYLES */
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #111111;
+            --accent-color: #555555;
+            --spacing-unit: 2rem;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* CONTAINER */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* TYPOGRAPHY */
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.5rem;
+        }
+
+        p {
+            font-size: 1.125rem;
+            color: #333;
+            margin-bottom: 1.5rem;
+            max-width: 600px;
+        }
+
+        a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        a:hover {
+            opacity: 0.6;
+        }
+
+        /* SECTIONS */
+        section {
+            margin-bottom: 6rem;
+        }
+
+        /* HERO SECTION */
+        .hero-sub {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            font-weight: 400;
+            margin-bottom: 3rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--text-color);
+            color: var(--bg-color);
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        .cta-button:hover {
+            background-color: #333;
+            color: #fff;
+            opacity: 1;
+        }
+
+        /* TAGS */
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            background: #f4f4f4;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: #444;
+        }
+
+        /* PORTFOLIO GRID */
+        .project-card {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            transition: transform 0.2s;
+        }
+
+        .project-card:hover {
+            border-color: #ccc;
+            transform: translateY(-2px);
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-link {
+            font-weight: 600;
+            margin-top: 1rem;
+            display: inline-block;
+            border-bottom: 1px solid black;
+        }
+
+        /* FOOTER */
+        footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            margin-right: 1.5rem;
+        }
+
+        /* MOBILE RESPONSIVE */
+        @media (max-width: 600px) {
+            h1 { font-size: 2.5rem; }
+            .hero-sub { font-size: 1.2rem; }
+            .container { padding: 2rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <section>
+            <h1>Designing logic.<br>Coding aesthetics.</h1>
+            <p class="hero-sub">I bridge the gap between Software Engineering and Creative Design. Building pixel-perfect websites with Webflow & logic.</p>
+            <a href="mailto:isakniet.online@gmail.com" class="cta-button">Contact Me</a>
+        </section>
+
+        <section>
+            <h2>The Hybrid Profile</h2>
+            <p>With a B.S. in Software Engineering, I don't just "paint" interfaces—I build systems. I specialize in turning complex Figma layouts into clean, scalable Webflow sites that work flawlessly.</p>
+            
+            <div class="tags-container">
+                <span class="tag">Webflow</span>
+                <span class="tag">Figma</span>
+                <span class="tag">HTML/CSS</span>
+                <span class="tag">Tilda</span>
+                <span class="tag">Design Systems</span>
+                <span class="tag">Automations</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>Selected Works</h2>
+            
+            <div class="project-card">
+                <div class="project-title">Japandi Fashion Store</div>
+                <div class="tags-container" style="margin: 0.5rem 0 1rem 0;">
+                    <span class="tag">Webflow</span>
+                    <span class="tag">E-commerce</span>
+                </div>
+                <p>Minimalist clothing store with custom interactions. From Figma prototype to fully responsive Webflow build.</p>
+                <a href="https://www.behance.net/" target="_blank" class="project-link">View Case on Behance →</a>
+            </div>
+
+            <div class="project-card">
+                <div class="project-title">Corporate Digital Ecosystem</div>
+                <div class="tags-container" style="margin: 0.5rem 0 1rem 0;">
+                    <span class="tag">Operations</span>
+                    <span class="tag">Optimization</span>
+                </div>
+                <p>Managed digital assets and optimized web performance for a B2B company, integrating AI workflows.</p>
+                <a href="https://www.behance.net/" target="_blank" class="project-link">View Case on Behance →</a>
+            </div>
+        </section>
+
+        <footer>
+            <div class="social-links">
+                <a href="mailto:isakniet.online@gmail.com">Email</a>
+                <a href="https://linkedin.com/in/ваш-профиль" target="_blank">LinkedIn</a>
+                <a href="https://behance.net/ваш-профиль" target="_blank">Behance</a>
+                <a href="https://t.me/ваш-ник" target="_blank">Telegram</a>
+            </div>
+            <div>© 2026 Akniyet Adil. Built with code.</div>
+        </footer>
+    </div>
+
+</body>
+</html>
