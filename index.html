@@ -4,135 +4,191 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Akniyet Adil | No-Code Developer</title>
-    <style>
-     :root {
-    --bg-color: #ffffff; /* Чистый белый фон страницы */
-    --card-bg: #F4F2ED;  /* Тот самый благородный бежево-серый оттенок с вашего фото */
-    --text-color: #1a1a1a;
-    --button-dark: #1F1F1F;
-}
+   <style>
+    :root {
+        --bg-color: #ffffff;      /* Белый фон всей страницы */
+        --card-bg: #F4F2ED;       /* Мягкий бежевый для карточек */
+        --text-main: #1a1a1a;     /* Основной текст */
+        --text-sub: #888888;      /* Второстепенный текст */
+        --radius: 24px;           /* Скругление углов */
+        --btn-color: #1F1F1F;     /* Цвет кнопок */
+    }
 
-body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; /* Более чистый шрифт */
-}
+    body {
+        font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        margin: 0;
+        padding: 0;
+        line-height: 1.5;
+    }
 
-/* ЗАГОЛОВКИ СЕКЦИЙ */
-h2 {
-    font-family: 'Inter', sans-serif;
-    font-size: 2rem;
-    font-weight: 300; /* Тонкий шрифт */
-    text-transform: uppercase;
-    letter-spacing: 0.1em; /* Разрядка букв */
-    margin-bottom: 3rem;
-    border-bottom: none; /* Убираем жирную линию */
-    color: #888; /* Делаем заголовок секции серым, менее активным */
-}
+    /* КОНТЕЙНЕР (Ограничитель ширины) */
+    .container {
+        max-width: 1200px; /* Делаем пошире, чтобы влезло 3 карточки */
+        margin: 0 auto;
+        padding: 3rem 2rem;
+    }
 
-/* КАРТОЧКА ПРОЕКТА (Soft Minimal) */
-.project-card {
-    background-color: var(--card-bg);
-    border: none; /* Убираем рамки */
-    border-radius: 24px; /* Сильные скругления, как на фото */
-    padding: 2.5rem;
-    margin-bottom: 2rem;
-    position: relative;
-    box-shadow: none; /* Убираем жесткие тени */
-    transition: transform 0.3s ease;
-    
-    /* Flex для выравнивания кнопки внизу */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 280px; /* Чтобы карточки были одной высоты */
-}
+    a { text-decoration: none; color: inherit; }
 
-.project-card:hover {
-    transform: translateY(-5px); /* Легкое всплытие */
-}
+    /* --- 1. СТИЛИ ДЛЯ ИНТРО (BENTO GRID) --- */
+    .hero-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr; /* Левая колонка уже, правая шире */
+        gap: 1.5rem;
+        margin-bottom: 4rem;
+    }
 
-/* Заголовок внутри карточки */
-.project-title {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 400; /* Не жирный */
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 1rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid rgba(0,0,0,0.1); /* Тонкая линия-разделитель */
-    color: #1a1a1a;
-}
+    /* Общий стиль для всех "мягких" блоков */
+    .soft-card {
+        background-color: var(--card-bg);
+        border-radius: var(--radius);
+        padding: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
 
-/* Описание */
-.project-card p {
-    font-size: 1rem;
-    color: #555;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-    font-weight: 300;
-}
+    /* Левый блок (Профиль) */
+    .profile-block {
+        min-height: 300px;
+    }
 
-/* Теги (сделаем их минималистичными строчками) */
-.tags-container {
-    margin-bottom: 1rem;
-}
+    .profile-name h1 {
+        font-size: 2.5rem;
+        font-weight: 500;
+        letter-spacing: -0.03em;
+        margin: 0;
+        line-height: 1.1;
+    }
 
-.tag {
-    background: transparent;
-    border: 1px solid #ccc;
-    border-radius: 50px;
-    padding: 0.3rem 0.8rem;
-    font-size: 0.75rem;
-    color: #666;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
+    .profile-role {
+        font-size: 1.1rem;
+        color: var(--text-sub);
+        margin-top: 0.5rem;
+    }
 
-/* НИЖНЯЯ ЧАСТЬ КАРТОЧКИ С КНОПКОЙ */
-.card-footer {
-    display: flex;
-    justify-content: space-between; /* Разносим по краям */
-    align-items: center;
-    margin-top: auto; /* Прижимаем к низу */
-}
+    .profile-footer {
+        margin-top: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
 
-/* Цена/Инфо слева (как "150 BYN" на фото) */
-.card-info-left {
-    font-size: 0.9rem;
-    color: #888;
-    text-transform: uppercase;
-    font-weight: 600;
-}
+    .contact-info div {
+        font-size: 0.9rem;
+        color: var(--text-sub);
+        margin-top: 0.3rem;
+    }
 
-/* Кнопка-таблетка (черная овальная) */
-.project-link {
-    background-color: var(--button-dark);
-    color: #fff;
-    padding: 0.8rem 2rem;
-    border-radius: 50px; /* Овальная форма */
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 500;
-    transition: background 0.3s;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-}
+    /* Правый блок (Objective) */
+    .objective-block {
+        justify-content: center;
+        background-color: #f9f9f9; /* Чуть светлее, для контраста */
+    }
 
-.project-link:hover {
-    background-color: #333;
-    color: #fff;
-    opacity: 0.9;
-}
+    .objective-text {
+        font-size: 1.8rem; /* Крупный текст манифеста */
+        font-weight: 300;
+        line-height: 1.3;
+        color: var(--text-main);
+    }
 
-/* Стрелочка в кнопке (CSS-стрелка) */
-.project-link::after {
-    content: "↗"; /* Символ стрелки */
-    font-size: 1.1rem;
-}
-    </style>
+    .highlight {
+        color: #888; /* Выделение цветом */
+        font-style: italic;
+    }
+
+    /* --- 2. ЗАГОЛОВКИ РАЗДЕЛОВ --- */
+    h2 {
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--text-sub);
+        margin-bottom: 2rem;
+        font-weight: 600;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 1rem;
+    }
+
+    /* --- 3. СЕТКА ПРОЕКТОВ (GRID 3 КОЛОНКИ) --- */
+    .portfolio-grid {
+        display: grid;
+        /* Магия CSS: авто-заполнение. Минимум 320px, иначе перенос */
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .project-card {
+        background-color: var(--card-bg);
+        border-radius: var(--radius);
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 350px; /* Высота карточки */
+        transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .project-title {
+        font-size: 1.25rem;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+    }
+
+    .project-desc {
+        font-size: 0.95rem;
+        color: #666;
+        font-weight: 300;
+        line-height: 1.5;
+        margin-bottom: 1.5rem;
+    }
+
+    .tags-container {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        margin-bottom: auto; /* Толкает футер вниз */
+    }
+
+    .tag {
+        font-size: 0.75rem;
+        border: 1px solid rgba(0,0,0,0.1);
+        padding: 0.2rem 0.6rem;
+        border-radius: 50px;
+        color: #666;
+    }
+
+    .card-footer {
+        margin-top: 2rem;
+        display: flex;
+        justify-content: flex-end; /* Кнопка справа */
+    }
+
+    .project-link {
+        background: var(--btn-color);
+        color: #fff;
+        padding: 0.7rem 1.5rem;
+        border-radius: 50px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        transition: opacity 0.2s;
+    }
+
+    .project-link:hover { opacity: 0.8; }
+
+    /* АДАПТИВНОСТЬ */
+    @media (max-width: 768px) {
+        .hero-grid { grid-template-columns: 1fr; } /* На телефоне блоки друг под другом */
+        .portfolio-grid { grid-template-columns: 1fr; } /* На телефоне 1 карточка в ряд */
+        .objective-text { font-size: 1.4rem; }
+    }
+</style>
 </head>
 <body>
 
