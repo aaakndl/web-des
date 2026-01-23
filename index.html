@@ -188,6 +188,69 @@
         .portfolio-grid { grid-template-columns: 1fr; } /* На телефоне 1 карточка в ряд */
         .objective-text { font-size: 1.4rem; }
     }
+       /* --- ФУТЕР (SOFT CARD STYLE) --- */
+footer {
+    margin-top: 4rem; /* Отступ от проектов */
+    padding-bottom: 2rem;
+}
+
+.footer-card {
+    background-color: var(--card-bg); /* Тот же бежевый цвет */
+    border-radius: var(--radius);
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.footer-header h2 {
+    font-size: 2rem;
+    color: var(--text-main);
+    border: none;
+    margin: 0;
+    text-transform: none; /* Обычный регистр, не CAPS */
+    font-weight: 500;
+    letter-spacing: -0.02em;
+}
+
+.footer-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.footer-link-item {
+    background-color: #fff; /* Белые кнопки на бежевом фоне */
+    color: var(--text-main);
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.footer-link-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.copyright {
+    margin-top: 2rem;
+    font-size: 0.85rem;
+    color: var(--text-sub);
+    border-top: 1px solid rgba(0,0,0,0.05);
+    padding-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Адаптив для футера */
+@media (max-width: 600px) {
+    .copyright { flex-direction: column; gap: 1rem; align-items: flex-start; }
+    .footer-header h2 { font-size: 1.5rem; }
+}
 </style>
 </head>
 <body>
@@ -195,142 +258,109 @@
     <div class="container">
     <section style="padding-top: 4rem;">
     
-    <div class="id-card-container">
-        <div class="paper-clip"></div>
-        
-        <div class="blue-card">
-            <img src="https://via.placeholder.com/150" alt="Akniyet Photo" class="card-photo">
-            
-            <div class="card-info">
-                <h1>Akniyet<br>Adil</h1>
-                <div class="card-role">No-Code Developer</div>
-                
-                <div style="margin-top: 1.5rem; font-size: 0.9rem; opacity: 0.9;">
-                    <div>Astana, Kazakhstan</div>
-                    <div>isakniet.online@gmail.com</div>
-                </div>
-            </div>
-
-            <div class="qr-code">
-                [ QR ]<br>Portfolio
-            </div>
+  <div class="hero-grid">
+    
+    <div class="soft-card profile-block">
+        <div class="profile-name">
+            <h1>Akniyet<br>Adil</h1>
+            <div class="profile-role">No-Code Developer</div>
         </div>
 
-        <div class="paper-text">
-            <h2 style="font-size: 1.2rem; border: none; margin: 0;">Objective:</h2>
-            <p style="margin-top: 0.5rem; color: #333;">
-                Designing <span class="scribble-highlight">logic</span>. Coding aesthetics.<br>
-                I bridge the gap between Software Engineering and Creative Design using Webflow & Logic.
-            </p>
-            <div style="text-align: right; margin-top: 1rem;">
-                <a href="#portfolio" style="background: #1a1a1a; color: white; padding: 0.5rem 1rem; font-weight: bold; font-family: sans-serif;">VIEW PROJECTS →</a>
+        <div class="profile-footer">
+            <div class="contact-info">
+                <div>Astana, Kazakhstan</div>
+                <div>isakniet.online@gmail.com</div>
+            </div>
+            <div style="opacity: 0.3; font-size: 0.8rem; text-align: right;">
+                [ QR ]<br>Portfolio
             </div>
         </div>
     </div>
 
+    <div class="soft-card objective-block">
+        <div class="objective-text">
+            Designing <span class="highlight" style="color:#1a1a1a; font-style:normal;">logic</span>. Coding aesthetics.<br><br>
+            <span style="font-size: 1.1rem; color: #666;">
+                I bridge the gap between Software Engineering and Creative Design using Webflow & Logic.
+            </span>
+        </div>
+        <div style="margin-top: 2rem;">
+             <a href="mailto:isakniet.online@gmail.com" class="project-link">Contact Me →</a>
+        </div>
+    </div>
+</div>
+
 </section>
 
-        <section>
-            <h2>Selected Works</h2>
-            
-            <div class="project-card">
-                <div class="project-title">Corporate Website Design</div>
-                <div class="tags-container" style="margin: 0.5rem 0 1rem 0;">
+   <section>
+    <h2>Selected Works</h2>
+
+    <div class="portfolio-grid">
+
+        <div class="project-card">
+            <div>
+                <div class="project-title">Corporate Website</div>
+                <div class="project-desc">A professional corporate web presence designed for clear business communication.</div>
+                <div class="tags-container">
                     <span class="tag">Web Design</span>
                     <span class="tag">Corporate</span>
-                    <span class="tag">UI/UX</span>
                 </div>
-                <p>A professional corporate web presence designed for clear business communication and structure.</p>
-                <a href="https://www.behance.net/gallery/218923727/Corporate-website" target="_blank" class="project-link">View Case on Behance →</a>
             </div>
+            <div class="card-footer">
+                <a href="ВАША_ССЫЛКА" target="_blank" class="project-link">View Case</a>
+            </div>
+        </div>
 
-            <div class="project-card">
+        <div class="project-card">
+            <div>
                 <div class="project-title">Engineering Plus FZE</div>
-                <div class="tags-container" style="margin: 0.5rem 0 1rem 0;">
-                    <span class="tag">B2B</span>
-                    <span class="tag">Industrial Design</span>
+                <div class="project-desc">Robust web solution for an engineering firm, emphasizing technical expertise.</div>
+                <div class="tags-container">
                     <span class="tag">Webflow</span>
+                    <span class="tag">B2B</span>
                 </div>
-                <p>Robust web solution for an engineering firm, emphasizing technical expertise and reliability.</p>
-                <a href="https://www.behance.net/gallery/214498407/Website-Design-for-Engineering-Plus-FZE" target="_blank" class="project-link">View Case on Behance →</a>
             </div>
-
-            <div class="project-card">
-                <div class="project-title">Temple of Femida: Branding</div>
-                <div class="tags-container" style="margin: 0.5rem 0 1rem 0;">
-                    <span class="tag">Brand Identity</span>
-                    <span class="tag">Community</span>
-                    <span class="tag">Visuals</span>
-                </div>
-                <p>A cohesive brand identity and visual language designed for a women's community platform.</p>
-                <a href="https://www.behance.net/gallery/225682017/Temple-of-Femida-Branding-for-a-Womens-Community" target="_blank" class="project-link">View Case on Behance →</a>
+            <div class="card-footer">
+                <a href="ВАША_ССЫЛКА" target="_blank" class="project-link">View Case</a>
             </div>
+        </div>
 
-            <div class="project-card">
-                <div class="project-title">Cafe Loyalty Mobile App</div>
-                <div class="tags-container" style="margin: 0.5rem 0 1rem 0;">
-                    <span class="tag">Mobile App</span>
-                    <span class="tag">UX/UI</span>
-                    <span class="tag">Product Design</span>
-                </div>
-                <p>User-friendly mobile application interface designed to enhance the cafe customer experience.</p>
-                <a href="https://www.behance.net/gallery/221269411/UX-UI-Mobile-App-for-Cafe" target="_blank" class="project-link">View Case on Behance →</a>
-            </div>
-
-            <div class="project-card">
-                <div class="project-title">Cafe Branding & Brandbook</div>
-                <div class="tags-container" style="margin: 0.5rem 0 1rem 0;">
-                    <span class="tag">Branding</span>
-                    <span class="tag">Print Design</span>
-                    <span class="tag">Identity</span>
-                </div>
-                <p>Comprehensive visual identity system and guidelines developed for a hospitality business.</p>
-                <a href="https://www.behance.net/gallery/221543833/Cafe-Branding-Brandbook" target="_blank" class="project-link">View Case on Behance →</a>
-            </div>
-
-            <div class="project-card">
-                <div class="project-title">AI Art: The World of Blue Hinoki</div>
-                <div class="tags-container" style="margin: 0.5rem 0 1rem 0;">
-                    <span class="tag">Generative AI</span>
-                    <span class="tag">Concept Art</span>
-                    <span class="tag">Visual Storytelling</span>
-                </div>
-                <p>Atmospheric visual project exploring serene aesthetics using AI generation tools.</p>
-                <a href="https://www.behance.net/gallery/238031005/AI-Generated-Serenity-The-World-of-Blue-Hinoki" target="_blank" class="project-link">View Case on Behance →</a>
-            </div>
-
-            <div class="project-card">
-                <div class="project-title">Tiffany & Co Holiday Concept</div>
-                <div class="tags-container" style="margin: 0.5rem 0 1rem 0;">
-                    <span class="tag">Motion Design</span>
-                    <span class="tag">Luxury</span>
+        <div class="project-card">
+            <div>
+                <div class="project-title">Blue Hinoki AI</div>
+                <div class="project-desc">Atmospheric visual project exploring serene aesthetics using AI.</div>
+                <div class="tags-container">
+                    <span class="tag">AI Art</span>
                     <span class="tag">Concept</span>
                 </div>
-                <p>Creative holiday film concept capturing the luxury essence of the brand.</p>
-                <a href="https://www.behance.net/gallery/238020709/Conceptual-holiday-film-for-Tiffany-Co" target="_blank" class="project-link">View Case on Behance →</a>
             </div>
+            <div class="card-footer">
+                <a href="ВАША_ССЫЛКА" target="_blank" class="project-link">View Case</a>
+            </div>
+        </div>
 
-            <div class="project-card">
-                <div class="project-title">PR Box & Social Launch</div>
-                <div class="tags-container" style="margin: 0.5rem 0 1rem 0;">
-                    <span class="tag">Packaging</span>
-                    <span class="tag">SMM Design</span>
-                    <span class="tag">Marketing</span>
-                </div>
-                <p>Design for a PR launch kit and accompanying social media assets to drive engagement.</p>
-                <a href="https://www.behance.net/gallery/227446355/PR-Box-Social-Media-Launch-Design" target="_blank" class="project-link">View Case on Behance →</a>
-            </div>
-        </section>
+        </div> </section>
 
         <footer>
-            <div class="social-links">
-                <a href="mailto:isakniet.online@gmail.com">Email</a>
-                <a href="https://linkedin.com/in/ваш-профиль" target="_blank">LinkedIn</a>
-                <a href="https://behance.net/ваш-профиль" target="_blank">Behance</a>
-                <a href="https://t.me/ваш-ник" target="_blank">Telegram</a>
-            </div>
+    <div class="footer-card">
+        
+        <div class="footer-header">
+            <h2>Open for remote collaborations.<br>Let's build something great.</h2>
+        </div>
+
+        <div class="footer-links">
+            <a href="mailto:isakniet.online@gmail.com" class="footer-link-item">Email ↗</a>
+            <a href="https://www.linkedin.com/" target="_blank" class="footer-link-item">LinkedIn</a>
+            <a href="https://www.behance.net/" target="_blank" class="footer-link-item">Behance</a>
+            <a href="https://t.me/ваш_ник" target="_blank" class="footer-link-item">Telegram</a>
+        </div>
+
+        <div class="copyright">
             <div>© 2026 Akniyet Adil</div>
-        </footer>
+            <div>Built with Code & No-Code logic.</div>
+        </div>
+    </div>
+</footer>
     </div>
 
 </body>
