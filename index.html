@@ -5,213 +5,132 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Akniyet Adil | No-Code Developer</title>
     <style>
-       :root {
-    --electric-blue: #2952ff; /* Тот самый яркий синий с картинки */
-    --paper-bg: #f4f4f4;
-    --text-black: #1a1a1a;
-    --marker-color: #2952ff;
+     :root {
+    --bg-color: #ffffff; /* Чистый белый фон страницы */
+    --card-bg: #F4F2ED;  /* Тот самый благородный бежево-серый оттенок с вашего фото */
+    --text-color: #1a1a1a;
+    --button-dark: #1F1F1F;
 }
 
 body {
-    background-color: var(--paper-bg);
-    color: var(--text-black);
-    /* Добавляем легкий шум, чтобы было похоже на бумагу */
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; /* Более чистый шрифт */
 }
 
-/* СТИЛЬ ID-КАРТОЧКИ */
-.id-card-container {
-    position: relative;
-    max-width: 650px;
-    margin: 2rem auto 6rem auto;
-    transform: rotate(-2deg); /* Легкий наклон, как на фото */
-    transition: transform 0.3s ease;
-}
-
-.id-card-container:hover {
-    transform: rotate(0deg) scale(1.02); /* Выпрямляется при наведении */
-}
-
-.blue-card {
-    background-color: var(--electric-blue);
-    color: white;
-    padding: 2rem;
-    border-radius: 4px; /* Острые углы, как у пластиковой карты */
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 2rem;
-    box-shadow: 10px 10px 0px rgba(0,0,0,0.15); /* Жесткая тень для объема */
-    position: relative;
-    overflow: hidden;
-}
-
-/* Фотография внутри круга или квадрата */
-.card-photo {
-    width: 120px;
-    height: 140px;
-    background-color: #ddd;
-    object-fit: cover;
-    border: 2px solid white;
-    flex-shrink: 0;
-}
-
-.card-info h1 {
-    font-size: 2.5rem;
-    margin: 0;
-    line-height: 1;
-    color: white;
-    text-transform: uppercase;
-    font-weight: 800;
-}
-
-.card-role {
-    font-size: 1rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-top: 0.5rem;
-    border-top: 2px solid white;
-    padding-top: 0.5rem;
-    display: inline-block;
-}
-
-/* СКРЕПКА (Визуальный элемент сверху) */
-.paper-clip {
-    position: absolute;
-    top: -20px;
-    left: 20px;
-    width: 40px;
-    height: 80px;
-    border: 4px solid #444;
-    border-radius: 20px;
-    z-index: 10;
-    background: transparent;
-    border-bottom: none;
-}
-
-/* ТЕКСТ ПОД КАРТОЧКОЙ (Как на печатной машинке) */
-.paper-text {
-    background: white;
-    padding: 2rem;
-    margin-top: -2rem; /* Заезжает под карточку */
-    margin-left: 2rem;
-    margin-right: -1rem;
-    position: relative;
-    z-index: -1;
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.05);
-    font-family: 'Courier New', Courier, monospace; /* Шрифт печатной машинки */
-    border: 1px solid #ddd;
-    transform: rotate(1deg);
-}
-
-.scribble-highlight {
-    background: url('https://uploads-ssl.webflow.com/5f296c0f204365313a37482f/5f296c0f2043657c6b37485e_blue-underline.svg');
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-position: bottom;
-    padding-bottom: 5px;
-}
-
-/* QR Code имитация (белый квадрат) */
-.qr-code {
-    width: 80px;
-    height: 80px;
-    background: white;
-    margin-left: auto; /* Прижимает вправо */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--electric-blue);
-    font-weight: bold;
-    font-size: 0.8rem;
-    text-align: center;
-}
-        /* --- СТИЛИ ДЛЯ ПОРТФОЛИО (BRUTALISM STYLE) --- */
-
-/* Заголовки секций */
+/* ЗАГОЛОВКИ СЕКЦИЙ */
 h2 {
-    font-family: 'Courier New', Courier, monospace; /* Шрифт печатной машинки */
-    font-size: 1.8rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 2rem;
+    font-weight: 300; /* Тонкий шрифт */
     text-transform: uppercase;
-    border-bottom: 3px solid #1a1a1a;
-    padding-bottom: 0.5rem;
-    margin-bottom: 2rem;
-    letter-spacing: -0.05em;
-}
-
-/* Сама карточка проекта */
-.project-card {
-    background: #ffffff;
-    border: 2px solid #1a1a1a; /* Жирная черная рамка */
-    box-shadow: 6px 6px 0px #1a1a1a; /* Жесткая "падающая" тень без размытия */
-    border-radius: 4px; /* Чуть скругленные углы */
-    padding: 2rem;
+    letter-spacing: 0.1em; /* Разрядка букв */
     margin-bottom: 3rem;
-    transition: all 0.2s ease;
-    position: relative;
+    border-bottom: none; /* Убираем жирную линию */
+    color: #888; /* Делаем заголовок секции серым, менее активным */
 }
 
-/* Эффект при наведении: карточка "подпрыгивает" */
+/* КАРТОЧКА ПРОЕКТА (Soft Minimal) */
+.project-card {
+    background-color: var(--card-bg);
+    border: none; /* Убираем рамки */
+    border-radius: 24px; /* Сильные скругления, как на фото */
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+    box-shadow: none; /* Убираем жесткие тени */
+    transition: transform 0.3s ease;
+    
+    /* Flex для выравнивания кнопки внизу */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 280px; /* Чтобы карточки были одной высоты */
+}
+
 .project-card:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: 10px 10px 0px var(--electric-blue); /* Тень становится синей! */
+    transform: translateY(-5px); /* Легкое всплытие */
 }
 
 /* Заголовок внутри карточки */
 .project-title {
-    font-size: 1.4rem;
-    font-weight: 800;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400; /* Не жирный */
     text-transform: uppercase;
-    margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(0,0,0,0.1); /* Тонкая линия-разделитель */
     color: #1a1a1a;
 }
 
-/* Теги (стилизуем как наклейки) */
+/* Описание */
+.project-card p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+/* Теги (сделаем их минималистичными строчками) */
 .tags-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin: 1rem 0;
+    margin-bottom: 1rem;
 }
 
 .tag {
-    background: #f0f0f0;
-    color: #1a1a1a;
-    border: 1px solid #1a1a1a;
+    background: transparent;
+    border: 1px solid #ccc;
+    border-radius: 50px;
     padding: 0.3rem 0.8rem;
-    font-size: 0.8rem;
-    font-weight: 600;
-    font-family: 'Courier New', monospace;
+    font-size: 0.75rem;
+    color: #666;
     text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
-/* Ссылка (кнопка) */
-.project-link {
-    display: inline-block;
-    margin-top: 1.5rem;
-    background: #1a1a1a;
-    color: #fff;
-    padding: 0.8rem 1.5rem;
-    text-decoration: none;
-    font-weight: bold;
+/* НИЖНЯЯ ЧАСТЬ КАРТОЧКИ С КНОПКОЙ */
+.card-footer {
+    display: flex;
+    justify-content: space-between; /* Разносим по краям */
+    align-items: center;
+    margin-top: auto; /* Прижимаем к низу */
+}
+
+/* Цена/Инфо слева (как "150 BYN" на фото) */
+.card-info-left {
     font-size: 0.9rem;
-    border: 1px solid #1a1a1a;
-    transition: background 0.2s;
+    color: #888;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* Кнопка-таблетка (черная овальная) */
+.project-link {
+    background-color: var(--button-dark);
+    color: #fff;
+    padding: 0.8rem 2rem;
+    border-radius: 50px; /* Овальная форма */
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .project-link:hover {
-    background: var(--electric-blue); /* При наведении кнопка синеет */
+    background-color: #333;
     color: #fff;
-    border-color: var(--electric-blue);
-    opacity: 1;
+    opacity: 0.9;
 }
 
-/* Текст описания */
-.project-card p {
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #333;
-    max-width: 100%;
+/* Стрелочка в кнопке (CSS-стрелка) */
+.project-link::after {
+    content: "↗"; /* Символ стрелки */
+    font-size: 1.1rem;
 }
     </style>
 </head>
