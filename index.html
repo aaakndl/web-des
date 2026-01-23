@@ -126,6 +126,93 @@ body {
     font-size: 0.8rem;
     text-align: center;
 }
+        /* --- СТИЛИ ДЛЯ ПОРТФОЛИО (BRUTALISM STYLE) --- */
+
+/* Заголовки секций */
+h2 {
+    font-family: 'Courier New', Courier, monospace; /* Шрифт печатной машинки */
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    border-bottom: 3px solid #1a1a1a;
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+    letter-spacing: -0.05em;
+}
+
+/* Сама карточка проекта */
+.project-card {
+    background: #ffffff;
+    border: 2px solid #1a1a1a; /* Жирная черная рамка */
+    box-shadow: 6px 6px 0px #1a1a1a; /* Жесткая "падающая" тень без размытия */
+    border-radius: 4px; /* Чуть скругленные углы */
+    padding: 2rem;
+    margin-bottom: 3rem;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+/* Эффект при наведении: карточка "подпрыгивает" */
+.project-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 10px 10px 0px var(--electric-blue); /* Тень становится синей! */
+}
+
+/* Заголовок внутри карточки */
+.project-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    color: #1a1a1a;
+}
+
+/* Теги (стилизуем как наклейки) */
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.tag {
+    background: #f0f0f0;
+    color: #1a1a1a;
+    border: 1px solid #1a1a1a;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+}
+
+/* Ссылка (кнопка) */
+.project-link {
+    display: inline-block;
+    margin-top: 1.5rem;
+    background: #1a1a1a;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    border: 1px solid #1a1a1a;
+    transition: background 0.2s;
+}
+
+.project-link:hover {
+    background: var(--electric-blue); /* При наведении кнопка синеет */
+    color: #fff;
+    border-color: var(--electric-blue);
+    opacity: 1;
+}
+
+/* Текст описания */
+.project-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+    max-width: 100%;
+}
     </style>
 </head>
 <body>
